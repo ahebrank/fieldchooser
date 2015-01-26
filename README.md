@@ -1,6 +1,6 @@
 # Fieldchooser
 
-## Choose between several ExpressionEngine fields
+## Choose among several ExpressionEngine fields on the Publish page
 
 This is a poor man's flexible field type.  Sometimes you have a content area that might be two different things.  For me, a frequent use case is a content block that might sometimes be a locally hosted image, or sometimes be e.g., a Vimeo video embed.  These are two different fieldtypes (a File and maybe a Text URL), and their content is mutually exclusive, so it's confusing to the user to see them both on the Publish page.
 
