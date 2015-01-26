@@ -14,4 +14,4 @@ What Fieldchooser does is let the user choose which fieldtype they'd like to use
 {/if}
 ```
 
-When adding a Fieldchoooser field to a channel fieldset, you choose which fields you want to present to the user (in the above example, you'd pick out "Vimeo URL" and "Image" from a multiselect box).
+When adding a Fieldchoooser field to a channel fieldset, you choose which fields you want to present to the user (in the above example, you'd pick out "Vimeo URL" and "Image" from a multiselect box). Obviously, you need to create these fields before you try to set up a Fieldchooser.

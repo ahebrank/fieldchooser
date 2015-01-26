@@ -2,10 +2,10 @@
 /**
  * ExpressionEngine Fieldtype Class
  *
- * @package   
+ * @package   Fieldchooser
  * @category  Fieldtypes
- * @author    
- * @link    
+ * @author    Andy Hebrank
+ * @link      https://github.com/ahebrank/fieldchooser
  */
 
 // define the old-style EE object
