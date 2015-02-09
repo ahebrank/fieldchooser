@@ -83,7 +83,7 @@ class Fieldchooser_ft extends EE_Fieldtype {
         var show_field_id = field_lookup[$(this).val()];
         $(show_field_id).show();
       });
-    }; $(hide_field_dom_ids).hide(); bind_chooser(); })();</script>\n";
+    }; $(window).load(function() { $(hide_field_dom_ids).hide(); bind_chooser(); }); })();</script>\n";
 
     if (!empty($field_name_lookup)) {
       return form_dropdown($this->field_name, $field_name_lookup) . $script;
