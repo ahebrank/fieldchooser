@@ -75,19 +75,19 @@ class Fieldchooser_ft extends EE_Fieldtype {
     }
 
     $script = '<script type="text/javascript">(function() {';
-    $script .= "var field_lookup = {" . implode(', ', $dom_lookup) . "};";
-    $script .= "var hide_field_dom_ids = '" . implode(', ', $dom_ids) . "';";
-    $script .= "var JQselect = $('select[name=field_id_" . $this->field_id . "]');";
+    $script .= "\nvar field_lookup = {" . implode(', ', $dom_lookup) . "};\n";
+    $script .= "var hide_field_dom_ids = '" . implode(', ', $dom_ids) . "';\n";
+    $script .= "var JQselect = $('select[name=field_id_" . $this->field_id . "]');\n";
     $script .= "var do_select = function() {
       $(hide_field_dom_ids).hide();
       var show_field_id = field_lookup[JQselect.val()];
       $(show_field_id).show();
-    }";
+    };\n";
     $script .= "var bind_chooser = function() {
       JQselect.on('change', function(e) {
         do_select();
       });
-    }; $(window).load(function() { do_select(); bind_chooser(); }); })();</script>\n";
+    }; \n$(window).load(function() { bind_chooser(); do_select(); }); })();</script>\n";
 
     if (!empty($field_name_lookup)) {
       return form_dropdown($this->field_name, $field_name_lookup) . $script;
