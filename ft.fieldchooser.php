@@ -127,7 +127,7 @@ class Fieldchooser_ft extends EE_Fieldtype {
 
     if (is_object($result)) {
       if (!$result->num_rows()) return array();
-      $result = $query->result_array();
+      $result = (array)$result;
     }
 
     $field_lookup = array();
