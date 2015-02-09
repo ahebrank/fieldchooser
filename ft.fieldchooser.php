@@ -77,14 +77,14 @@ class Fieldchooser_ft extends EE_Fieldtype {
     $script = '<script type="text/javascript">(function() {';
     $script .= "var field_lookup = {" . implode(', ', $dom_lookup) . "};";
     $script .= "var hide_field_dom_ids = '" . implode(', ', $dom_ids) . "';";
-    $script .= "var $select = $('select[name=field_id_" . $this->field_id . "]');";
+    $script .= "var JQselect = $('select[name=field_id_" . $this->field_id . "]');";
     $script .= "var do_select = function() {
       $(hide_field_dom_ids).hide();
-      var show_field_id = field_lookup[$select.val()];
+      var show_field_id = field_lookup[JQselect.val()];
       $(show_field_id).show();
     }";
     $script .= "var bind_chooser = function() {
-      $select.on('change', function(e) {
+      JQselect.on('change', function(e) {
         do_select();
       });
     }; $(window).load(function() { do_select(); bind_chooser(); }); })();</script>\n";
