@@ -90,7 +90,7 @@ class Fieldchooser_ft extends EE_Fieldtype {
     }; \n$(window).load(function() { bind_chooser(); do_select(); }); })();</script>\n";
 
     if (!empty($field_name_lookup)) {
-      return form_dropdown($this->field_name, $field_name_lookup) . $script;
+      return form_dropdown($this->field_name, $field_name_lookup, $data) . $script;
     }
   }
 
