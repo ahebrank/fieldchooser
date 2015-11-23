@@ -70,6 +70,7 @@ class Fieldchooser_ft extends EE_Fieldtype {
     $dom_ids = array();
     $dom_lookup = array();
     foreach ($field_id_lookup as $id => $name) {
+      if ($id == 0) continue;
       $dom_ids[] = "#hold_field_" . $id;
       $dom_lookup[] = "'" . $name . "' : '#hold_field_" . $id . "'";
     }
@@ -80,8 +81,11 @@ class Fieldchooser_ft extends EE_Fieldtype {
     $script .= "var JQselect = $('select[name=field_id_" . $this->field_id . "]');\n";
     $script .= "var do_select = function() {
       $(hide_field_dom_ids).hide();
-      var show_field_id = field_lookup[JQselect.val()];
-      $(show_field_id).show();
+      var field_id = JQselect.val();
+      if (field_id != 0) {
+        var show_field_id = field_lookup[];
+        $(show_field_id).show();
+      }
     };\n";
     $script .= "var bind_chooser = function() {
       JQselect.on('change', function(e) {
@@ -134,7 +138,7 @@ class Fieldchooser_ft extends EE_Fieldtype {
       $result = $result->result_array();
     }
 
-    $field_lookup = array();
+    $field_lookup = array('0' => '<none>');
     foreach ($result as $row) {
       // make sure I don't include myself
       if ($my_field_id == $row['field_id']) continue;
