@@ -83,7 +83,7 @@ class Fieldchooser_ft extends EE_Fieldtype {
       $(hide_field_dom_ids).hide();
       var field_id = JQselect.val();
       if (field_id != 0) {
-        var show_field_id = field_lookup[];
+        var show_field_id = field_lookup[field_id];
         $(show_field_id).show();
       }
     };\n";
