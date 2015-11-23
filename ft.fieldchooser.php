@@ -138,7 +138,7 @@ class Fieldchooser_ft extends EE_Fieldtype {
       $result = $result->result_array();
     }
 
-    $field_lookup = array('0' => '<none>');
+    $field_lookup = array('0' => '--none--');
     foreach ($result as $row) {
       // make sure I don't include myself
       if ($my_field_id == $row['field_id']) continue;
